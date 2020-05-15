@@ -1,0 +1,166 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS/TS Sandbox</title>
+
+        <link rel="stylesheet" href="/dependencies/bootstrap.min.css">
+        <link rel="stylesheet" href="site.css">
+
+        <script src="/dependencies/jquery.min.js" defer></script>
+        <script src="/Scripts/main.js" defer></script>
+    </head>
+
+    <body>
+
+        <!-- Dynamically adds section if you add a data-name attrib and section class -->
+        <div id="sideNav">
+            <a class="toggle-side-nav-btn close-btn-x">&times;</a>
+        </div>
+        <span id="sideBarBurgerBtn" class="toggle-side-nav-btn">&#9776;</span>
+
+        <div id="pageTitleSection" class="jumbotron text-center">
+            <h1 class="display-3">JS/TS Sandbox</h1>
+            <p class="lead">A project for just creating random things with JavaScript/TypeScript.</p>
+            <p class="lead">Main focus here is the <strong>code</strong>, but i will try to make it look good and mobile
+                friendly</p>
+        </div>
+
+        <div class="container">
+
+            <div class="row mt-5 display-section" data-section-name="JSClock">
+                <div id="clockContainer" class="col-12 ">
+                    <div class="row mt-5 mb-5">
+                        <div class="col-12 text-center">
+                            <h1 id="clockDescription">JS Clock</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <button id="toggleClockTypeBtn" class="btn btn-info">24 hour Clock</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="currentClock" class="col text-center">
+                            <div id="digitalClockContainer" class="mt-5">
+                                <h1 id="digitalClockText" class="display-3"></h1>
+                            </div>
+                            <div id="analogClockContainer">
+                                <img class="analog-clock-img" src="/Images/Clock_MainBdy.png">
+                                <img id="clockHandHour" class="analog-clock-img" src="/Images/Clock_HourHand.png">
+                                <img id="clockHandMin" class="analog-clock-img" src="/Images/Clock_MinHand.png">
+                                <img id="clockHandSec" class="analog-clock-img" src="/Images/Clock_SecHand.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div id="clockBG" class="text-center align-content-center">
+                            <h4 class="display-4">This background is scrolling based on the time!</h4>
+                            <!--The art in the image is not synced up as well as i wanted to
+                                but this is more about the code then art
+                                -->
+                        </div>
+                        <div id="clockBGMobile" class="col p-3 bg-warning">
+                            <h4>Scrolling Time Based Background is only available on screen sizes > 612px width</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 display-section" data-section-name="Sorting">
+                <div id="sortingContainer" class="col">
+                    <div class="row mb-5">
+                        <div class="col text-center">
+                            <h1>Sorting</h1>
+                        </div>
+                    </div>
+                    <div class="row text-center mb-4">
+                        <div class="col-sm m-2">
+                            <button id="sortByFirstNameBtn" class="btn btn-info">Array Sort First name</button>
+                        </div>
+                        <div class="col-sm m-2">
+                            <button id="sortByLastNameBtn" class="btn btn-info">Array Sort Last name</button>
+                        </div>
+                        <div class="col-sm m-2">
+                            <button id="sortByAge" class="btn btn-info">Array Sort Age</button>
+                        </div>
+                    </div>
+                    <div class="row mb-5 text-center">
+                        <div class="col-sm m-2"><button id="sortManualByFirstNameBtn" class="btn btn-info">Manual sort
+                                First
+                                name</button></div>
+                        <div class="col-sm m-2"><button id="sortManualByLastNameBtn" class="btn btn-info"> Manual sort
+                                Last
+                                name</button></div>
+                        <div class="col-sm m-2"> <button id="sortManualByAge" class="btn btn-info">Manual sort
+                                Age</button>
+                        </div>
+                    </div>
+
+                    <div class="row text-center">
+                        <div class="col">
+                            <p>Array sort. Sorts an array of employee objects and rebuilds the table</p>
+                            <p>Manual sort. Takes the information directly from the table and rearrange the content</p>
+                        </div>
+                    </div>
+
+                    <div class="row text-center">
+                        <table id="employeeTbl" class="table table-dark table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        First name
+                                    </th>
+                                    <th>
+                                        Last Name
+                                    </th>
+                                    <th>
+                                        Age
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mt-5 mb-5 display-section" data-section-name="Calculator">
+
+                <div id="calcContainer" class="col-12">
+                    <div class="row mb-4">
+                        <h3 class="mx-auto">Calculator</h3>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div id="calcGrid">
+                            <div id="calcDisplay" class="d-flex align-items-end justify-content-around flex-column">
+                                <div id="calcBackDisplayText" class=""> BACK</div>
+                                <div id="calcDisplayText" class="">Front</div>
+                            </div>
+                            <button class="calc-btn" data-operation>+</button>
+                            <button class="calc-btn" data-operation>-</button>
+                            <button class="calc-btn" data-operation>*</button>
+                            <button class="calc-btn" data-operation>/</button>
+                            <button class="calc-btn" data-num>7</button>
+                            <button class="calc-btn" data-num>8</button>
+                            <button class="calc-btn" data-num>9</button>
+                            <button class="calc-btn" data-num>4</button>
+                            <button class="calc-btn" data-num>5</button>
+                            <button class="calc-btn" data-num>6</button>
+                            <button class="calc-btn" data-num>1</button>
+                            <button class="calc-btn" data-num>2</button>
+                            <button class="calc-btn" data-num>3</button>
+                            <button class="calc-btn" data-backspace>></button>
+                            <button class="calc-btn" data-clear>C</button>
+                            <button class="calc-btn" data-equals>=</button>
+                            <button class="calc-btn" data-num>0</button>
+                            <button class="calc-btn" data-num>.</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

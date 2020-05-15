@@ -1,0 +1,168 @@
+
+
+
+#pageTitleSection{
+    padding-top: 150px;
+    padding-bottom: 50px;
+}
+
+/*Side nav bar with added JS logic, adds links to sections*/
+#sideNav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: rgba(17, 17, 17, 1);
+    overflow-x: hidden;
+    white-space:nowrap;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  #sideNav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  #sideNav a:hover {
+    color: #f1f1f1;
+  }
+  
+  #sideNav .close-btn-x {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  #sideBarBurgerBtn{
+      position: fixed;
+      z-index: 1;
+      top: 10px;
+      left: 20px;
+      height: 30px;
+      width: 30px;
+      font-size: 3em;
+      cursor:pointer
+  }
+
+#clockContainer{
+    background-color:rgb(51, 153, 102);
+}
+#clockBG{
+    
+    background-image: url(Images/ScrollingBack.png);
+    background-color:rgb(113, 42, 194);
+    background-position-x:0;
+    margin: 50px auto 50px auto;
+   
+    width: 512px;
+    height: 512px;
+}
+
+#clockBGMobile{
+    display: none;
+}
+
+#digitalClockContainer{
+    display:none;
+}
+#digitalClockText{
+    font-size: 3em;
+}
+
+#analogClockContainer{
+    position: relative;
+    min-height: 250px;
+    min-width: 250px;
+}
+.analog-clock-img{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+   top:50%;
+   margin-top: -75px;
+    }
+
+#clockContainer{
+    min-height: 700px;
+    padding:  25px;;
+}
+
+#currentClock{
+    min-height: 250px;
+}
+
+
+#sortingContainer{
+    background-color: rgb(30, 131, 126);
+    padding: 20px;
+}
+
+
+#calcContainer{
+    background-color: rgb(91, 142, 102);
+    padding: 2em;
+}
+
+.calc-btn{
+    background-color: rgb(111, 147, 187);
+}
+
+#calcGrid{
+    display: grid;
+    grid-template-columns: repeat(4,100px);
+    grid-template-rows: minmax(150px,auto) repeat(5,100px);
+    justify-content: center;
+    align-content: center;
+}
+
+#calcDisplay{
+    background-color: black;
+    color: blanchedalmond;
+    grid-column: 1 / -1;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding: 20px;
+}
+#calcDisplayText{
+    font-size: 2em;
+}
+#calcBackDisplayText{
+    color: rgb(165, 163, 160);
+    font-size: .95em;
+}
+
+[data-equals]{
+    grid-column: -2;
+    grid-row: 4 / span 3;
+}
+[data-backspace]{
+    grid-column: -2;
+    grid-row: 3 / span 1;
+}
+
+
+
+@media screen and (max-width: 612px) {
+    #clockBG{
+        display: none;
+    }
+    #clockBGMobile{
+        display: block;
+    }
+
+    #calcGrid{
+        grid-template-columns: repeat(4,50px);
+        grid-template-rows: minmax(100px,auto) repeat(5,50px);
+    }
+}
